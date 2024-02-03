@@ -48,6 +48,6 @@ class GameLoop:
             moves = MoveList()
 
             for player in players:
-                moves.addMove(Move(player, player.play_card(self.state)))
+                moves.addMove(Move(player, player.play_card(self.state, self.num_players)))
 
             moves.playMoves(self.state)

@@ -2,6 +2,7 @@ from bots.lowest import Lowest
 from bots.highest import Highest
 from bots.random import Random
 from bots.smartest import Smartest
+from bots.estimate import Estimate
 from engine.player import Player
 from engine.gameLoop import GameLoop
 from log.logger import open_log, close_log, log
@@ -12,16 +13,18 @@ import random
 LOG_FILE = "logs/game_"
 
 def generatePlayer():
-    p = random.randrange(2, 4)
+    p = random.randrange(0, 5)
 
     if p == 0:
-        return Player("Bill", Lowest())
+        return Player("Carol", Smartest())
     elif p == 1:
-        return Player("Kim", Highest())
+        return Player("Nolan", Estimate())
     elif p == 2:
         return Player("Jim", Random())
+    elif p == 3:
+        return Player("Kim", Highest())
     else:
-        return Player("Carol", Smartest())
+        return Player("Bill", Lowest())
 
 def generatePlayers():
     n = random.randrange(2,10)
@@ -36,6 +39,7 @@ def setUpMappy():
     mappy["Kim"] = 0
     mappy["Jim"] = 0
     mappy["Carol"] = 0
+    mappy["Nolan"] = 0
     return mappy
 
 def addToMappy(mappy, mappy2, mappy3, values, players):
@@ -58,7 +62,7 @@ if __name__ == '__main__':
     winMappy = setUpMappy()
     loseMappy = setUpMappy()
     totalMappy = setUpMappy()
-    for x in range(1):
+    for x in range(500):
         open_log(LOG_FILE + str(x) + ".txt")
         players = generatePlayers()
         values = GameLoop().do_game(players)

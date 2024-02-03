@@ -2,7 +2,7 @@ import random
 
 
 class Random:
-    def choose(self, hand, state):
+    def choose(self, hand, state, numPlayers):
         return random.randrange(0, len(hand))
 
     def choose_pile(self, state):

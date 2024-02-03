@@ -2,7 +2,7 @@
 
 
 class Highest:
-    def choose(self, hand, state):
+    def choose(self, hand, state, numPlayers):
         return 0
 
     def choose_pile(self, state):

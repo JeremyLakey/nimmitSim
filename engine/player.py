@@ -21,8 +21,8 @@ class Player:
         hand.sort()
         self.hand = hand
 
-    def play_card(self, state):
-        i = self.bot.choose(self.hand, state)
+    def play_card(self, state, numPlayers):
+        i = self.bot.choose(self.hand, state, numPlayers)
         return self.hand.pop(i)
 
     def to_string(self):

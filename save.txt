@@ -1,4 +1,5 @@
-Bill w: 0 l: 0 average: 0 ratio: 0
-Kim w: 0 l: 0 average: 0 ratio: 0
-Jim w: 1 l: 2 average: 8.0 ratio: 0.3333333333333333
-Carol w: 0 l: 0 average: 0 ratio: 0
+Bill w: 10 l: 58 average: 24.352941176470587 ratio: 0.14705882352941177
+Kim w: 15 l: 65 average: 18.8625 ratio: 0.1875
+Jim w: 5 l: 74 average: 1.3291139240506329 ratio: 0.06329113924050633
+Carol w: 15 l: 57 average: 17.666666666666668 ratio: 0.20833333333333334
+Nolan w: 24 l: 49 average: 33.36986301369863 ratio: 0.3287671232876712

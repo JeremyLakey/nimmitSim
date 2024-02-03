@@ -5,8 +5,6 @@ class State:
         self.piles = [[] for i in range(4)]
         self.played = []
 
-    def __copy__(self):
-
     def start_cards(self, deck):
         self.piles = [[] for i in range(4)]
         self.played = []
