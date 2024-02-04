@@ -27,7 +27,7 @@ class State:
         if pile == -1:
             return True
 
-        if len(self.piles[pile]) > 5:
+        if len(self.piles[pile]) >= 5:
             move.player.score -= self.pile_total(pile)
             self.piles[pile] = []
             self.piles[pile].append(move.card)

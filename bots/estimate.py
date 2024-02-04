@@ -1,7 +1,7 @@
 import copy
 import random
 
-EPOCHS = 100
+EPOCHS = 300
 
 class Estimate:
 
@@ -23,7 +23,7 @@ class Estimate:
                 moves.append(self.randomMove(moves, state))
             moves.sort()
             index = moves.index(card)
-            total += self.simulateTurn(moves, state, index)
+            total += self.simulateTurn(moves, tempState, index)
             epoch += 1
         return total
 

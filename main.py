@@ -3,6 +3,7 @@ from bots.highest import Highest
 from bots.random import Random
 from bots.smartest import Smartest
 from bots.estimate import Estimate
+from bots.cautious import Cautious
 from engine.player import Player
 from engine.gameLoop import GameLoop
 from log.logger import open_log, close_log, log
@@ -13,18 +14,20 @@ import random
 LOG_FILE = "logs/game_"
 
 def generatePlayer():
-    p = random.randrange(0, 5)
+    p = random.randrange(0, 6)
 
     if p == 0:
-        return Player("Carol", Smartest())
+        return Player("Smartest", Smartest())
     elif p == 1:
-        return Player("Nolan", Estimate())
+        return Player("Estimate", Estimate())
     elif p == 2:
-        return Player("Jim", Random())
+        return Player("Random", Random())
     elif p == 3:
-        return Player("Kim", Highest())
+        return Player("Highest", Highest())
+    elif p == 4:
+        return Player("Cautious", Cautious())
     else:
-        return Player("Bill", Lowest())
+        return Player("Lowest", Lowest())
 
 def generatePlayers():
     n = random.randrange(2,10)
@@ -35,11 +38,12 @@ def generatePlayers():
 
 def setUpMappy():
     mappy = {}
-    mappy["Bill"] = 0
-    mappy["Kim"] = 0
-    mappy["Jim"] = 0
-    mappy["Carol"] = 0
-    mappy["Nolan"] = 0
+    mappy["Smartest"] = 0
+    mappy["Estimate"] = 0
+    mappy["Random"] = 0
+    mappy["Highest"] = 0
+    mappy["Lowest"] = 0
+    mappy["Cautious"] = 0
     return mappy
 
 def addToMappy(mappy, mappy2, mappy3, values, players):
